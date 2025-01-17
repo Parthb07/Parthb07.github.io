@@ -8,21 +8,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <script>
             function updateContent(section) {
-                // Construct the filename based on the section (e.g., 'home.html', 'skills.html')
+                
+                if (section === 'home') {
+                    // Clear the content for 'home'
+                    rightContainer.style.opacity = 0;
+                    setTimeout(() => {
+                        rightContainer.innerHTML = '';
+                        rightContainer.style.opacity = 1; 
+                    }, 400);
+                    return;
+                }
+                
+                // For other sections
                 const fileName = section + '.html';
 
-                // Fetch the HTML file content
                 fetch(fileName)
                     .then(response => response.text())
                     .then(content => {
                         const rightContainer = document.querySelector('.right-container');
 
-                        // Fade-out, update content, and fade-in
                         rightContainer.style.opacity = 0;
                         setTimeout(() => {
                             rightContainer.innerHTML = content;
                             rightContainer.style.opacity = 1;
-                        }, 400); // Match the duration of the fade-out transition
+                        }, 400);
                     })
                     .catch(error => {
                         console.error('Error loading content:', error);
