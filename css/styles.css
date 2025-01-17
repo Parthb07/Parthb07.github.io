@@ -1,0 +1,179 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background: none transparent;
+    color: white;
+}
+
+h1 {
+    font-size: 80px
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    color: white;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 1;
+}
+
+.degree, .uni {
+    font-weight: 600;
+    font-size: 30px
+}
+
+@keyframes pan {
+  0% {
+    background-position: 0% 160%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+#pattern {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-image: url("../img/pattern.png");
+    background-repeat: repeat;
+    animation: pan 300s linear infinite;
+    will-change: background-position;
+}
+
+#main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.left-container, .right-container {
+    flex: 1;
+    margin: 3%;
+    font-size: 20px;
+    top: 20%;
+    overflow: hidden;
+    overflow-y: scroll; /* Keep vertical scrolling enabled */
+    max-height: 90vh;
+    scrollbar-width: none; /* Firefox-specific to hide the scrollbar */
+}
+
+.right-container {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+    justify-content: center;
+    align-content: center;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    opacity: 1; /* Default state */
+    transform: scale(1); /* Default state */
+    
+    overflow: hidden;
+    overflow-y: scroll; /* Keep vertical scrolling enabled */
+    max-height: 90vh;
+}
+
+
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.95); /* Slight shrink during fade-out */
+}
+
+.fade-in {
+    opacity: 1;
+    transform: scale(1); /* Return to normal size during fade-in */
+}
+
+#navbar {
+    position: fixed;
+    top: 2%;
+    left: 50%; /* Shift navbar center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 50%; /* Allow navbar to fit its content */
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Add padding for breathing space */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.box {
+    transition: 0.2s;
+    width: 12%;
+    font-size: 18px; /* Adjust font size for better alignment */
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 20px; /* Improve clickable area */
+    /*border: 2px solid white;*/
+    border-bottom: 2px solid transparent;
+    margin: 0 10px; /* Add spacing between boxes */
+}
+
+.box:hover {
+    transform: scale(1);/* Prevent box resizing */
+    border-color: white;
+    font-size: 18px; /* Keep hover text size consistent */
+    /*background-color: white;
+    color: rgba(2, 0, 36, 1); /* Invert color on hover */
+    cursor: pointer;
+}
+
+#skills, #projects, #experience {
+    visibility: hidden
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+.description {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.links {
+    padding-top: 5%;
+}
+
+.link {
+    display: block;
+}
+
+.link a {
+    font-weight: 200;
+    text-decoration: none; /* Optional: Remove underline */
+    color: #ffffff; /* Default color for links */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.link a:hover {
+    color: #00ffcc; /* Change link color on hover */
+    text-shadow: 0px 0px 5px rgba(0, 255, 204, 0.7); /* Add a glowing effect */
+    /*font-weight: 400; /* Optional: Increase weight on hover */
+}
